@@ -47,6 +47,14 @@ rm -f "$ANACONDA_INSTALLER"
 echo_message "Creating a default Conda environment"
 conda create -n default_env python -y 
 conda activate default_env
+# Verify Anaconda installation
+if command -v conda &> /dev/null; then
+    echo_message "Anaconda installation and configuration is complete."
 
-echo_message "Anaconda installation and configuration is complete."
-
+    # Ensure the base environment is enabled and activated
+    echo_message "Activating the base Conda environment..."
+    conda activate base
+else
+    echo_message "Anaconda installation failed. Please check the logs for details."
+    exit 1
+fi
