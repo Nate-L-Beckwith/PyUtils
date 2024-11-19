@@ -1,0 +1,7 @@
+requests>=2.25.1
+python-apt>=2.1.0
+tenacity>=8.0.0
+click>=8.0.0
+loguru>=0.5.3
+plumbum>=1.7.0
+tqdm>=4.0.0
